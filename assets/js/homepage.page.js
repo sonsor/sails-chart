@@ -2,31 +2,20 @@ parasails.registerPage('homepage', {
   data: {
     ctx: null
   },
-
-  beforeMount: function () {
-
-  },
-
   mounted: async function () {
     this.ctx = document.getElementById('myChart').getContext('2d');
-    console.log("this.ctx :", this.ctx)
-    this.subscribe()
+    this.subscribe();
   },
-
   methods: {
+
     subscribe: async function () {
-
       io.socket.get('/dashboard/join', (data, jwRes) => {
-        console.log('Server responded with status code ' + jwRes.statusCode + ' and data: ', data);
-
-        io.socket.on('dashboard',  (data) => {
-          console.log("data :", data)
-          this.render(data)
+        io.socket.on('dashboard', (data) => {
+          this.render(data);
         });
-
       });
     },
-    render: function(data) {
+    render: function (data) {
       var config = {
         type: 'doughnut',
         data: {
@@ -34,8 +23,8 @@ parasails.registerPage('homepage', {
           datasets: [{
             data: data.data,
             backgroundColor: [
-              "#2980B9",
-              "#229954"
+              '#2980B9',
+              '#229954'
             ],
           }]
         },
@@ -79,8 +68,7 @@ parasails.registerPage('homepage', {
           }
         }
       };
-
       new Chart(this.ctx, config);
     }
   }
-})
+});

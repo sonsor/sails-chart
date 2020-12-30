@@ -290,19 +290,19 @@ Chart.pluginService.register({
   beforeDraw: function (chart) {
 
     if (chart.config.options.elements.top) {
-      addTopLayer(chart)
+      addTopLayer(chart);
     }
 
     if (chart.config.options.elements.center) {
-      addCenterLayer(chart)
+      addCenterLayer(chart);
     }
 
     if (chart.config.options.elements.bottom) {
-      addBottomLayer(chart)
+      addBottomLayer(chart);
     }
 
     if (chart.config.options.elements.bottomDown) {
-      addBottomDownLayer(chart)
+      addBottomDownLayer(chart);
     }
   }
 });
