@@ -4,23 +4,17 @@ function addTopLayer(chart) {
   let fontStyle = topConfig.fontStyle || 'Arial';
   let txt = topConfig.text;
   let color = topConfig.color || '#000';
-  let maxFontSize = topConfig.maxFontSize || 16;
   let sidePadding = topConfig.sidePadding || 5;
   let sidePaddingCalculated = (sidePadding / 100) * (chart.innerRadius * 2);
   // Start with a base font of 30px
   ctx.font = '16px ' + fontStyle;
 
   // Get the width of the string and also the width of the element minus 10 to give it 5px side padding
-  let stringWidth = ctx.measureText(txt).width;
   let elementWidth = (chart.innerRadius * 2) - sidePaddingCalculated;
 
-  // Find out how much the font can grow in width.
-  let widthRatio = elementWidth / stringWidth;
-  let newFontSize = Math.floor(30 * widthRatio);
-  let elementHeight = (chart.innerRadius * 2);
 
   // Pick a new font size so it will not be larger than the height of label.
-  let fontSizeToUse = '20px'; //Math.min(newFontSize, elementHeight, maxFontSize);
+  let fontSizeToUse = '20px';
   let minFontSize = topConfig.minFontSize;
   let lineHeight = topConfig.lineHeight || 5;
   let wrapText = false;
@@ -83,20 +77,14 @@ function addCenterLayer(chart) {
   let fontStyle = centerConfig.fontStyle || 'Arial';
   let txt = centerConfig.text;
   let color = centerConfig.color || '#000';
-  let maxFontSize = centerConfig.maxFontSize || 16;
   let sidePadding = centerConfig.sidePadding || 5;
   let sidePaddingCalculated = (sidePadding / 100) * (chart.innerRadius * 2);
   // Start with a base font of 30px
   ctx.font = '25px ' + fontStyle;
 
   // Get the width of the string and also the width of the element minus 10 to give it 5px side padding
-  let stringWidth = ctx.measureText(txt).width;
   let elementWidth = (chart.innerRadius * 2) - sidePaddingCalculated;
 
-  // Find out how much the font can grow in width.
-  let widthRatio = elementWidth / stringWidth;
-  let newFontSize = Math.floor(30 * widthRatio);
-  let elementHeight = (chart.innerRadius * 2);
 
   // Pick a new font size so it will not be larger than the height of label.
   let fontSizeToUse = '40px';
@@ -161,23 +149,17 @@ function addBottomLayer(chart) {
   let fontStyle = bottomConfig.fontStyle || 'Arial';
   let txt = bottomConfig.text;
   let color = bottomConfig.color || '#000';
-  let maxFontSize = bottomConfig.maxFontSize || 16;
   let sidePadding = bottomConfig.sidePadding || 5;
   let sidePaddingCalculated = (sidePadding / 100) * (chart.innerRadius * 2);
   // Start with a base font of 30px
   ctx.font = '16px ' + fontStyle;
 
   // Get the width of the string and also the width of the element minus 10 to give it 5px side padding
-  let stringWidth = ctx.measureText(txt).width;
   let elementWidth = (chart.innerRadius * 2) - sidePaddingCalculated;
 
-  // Find out how much the font can grow in width.
-  let widthRatio = elementWidth / stringWidth;
-  let newFontSize = Math.floor(30 * widthRatio);
-  let elementHeight = (chart.innerRadius * 2);
 
   // Pick a new font size so it will not be larger than the height of label.
-  let fontSizeToUse = '20px'; //Math.min(newFontSize, elementHeight, maxFontSize);
+  let fontSizeToUse = '20px';
   let minFontSize = bottomConfig.minFontSize;
   let lineHeight = bottomConfig.lineHeight || 25;
   let wrapText = false;
@@ -239,23 +221,17 @@ function addBottomDownLayer(chart) {
   let fontStyle = bottomDownConfig.fontStyle || 'Arial';
   let txt = bottomDownConfig.text;
   let color = bottomDownConfig.color || '#000';
-  let maxFontSize = bottomDownConfig.maxFontSize || 16;
   let sidePadding = bottomDownConfig.sidePadding || 5;
   let sidePaddingCalculated = (sidePadding / 100) * (chart.innerRadius * 2);
   // Start with a base font of 30px
   ctx.font = '30px ' + fontStyle;
 
   // Get the width of the string and also the width of the element minus 10 to give it 5px side padding
-  let stringWidth = ctx.measureText(txt).width;
   let elementWidth = (chart.innerRadius * 2) - sidePaddingCalculated;
 
-  // Find out how much the font can grow in width.
-  let widthRatio = elementWidth / stringWidth;
-  let newFontSize = Math.floor(30 * widthRatio);
-  let elementHeight = (chart.innerRadius * 2);
 
   // Pick a new font size so it will not be larger than the height of label.
-  let fontSizeToUse = '20px'; //Math.min(newFontSize, elementHeight, maxFontSize);
+  let fontSizeToUse = '20px';
   let minFontSize = bottomDownConfig.minFontSize;
   let lineHeight = bottomDownConfig.lineHeight || 25;
   let wrapText = false;
